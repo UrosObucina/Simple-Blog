@@ -1,6 +1,6 @@
 #
 # Extension Builder settings for extension simpleblog
-# generated 2018-12-12T16:10:00Z
+# generated 2018-12-13T12:02:00Z
 #
 # See http://www.yaml.org/spec/1.2/spec.html
 #
@@ -64,7 +64,7 @@ overwriteSettings:
 #  ext_tables.sql: merge
 
 ## use static date attribute in xliff files ##
-#staticDateInXliffFiles: 2018-12-12T16:10:00Z
+#staticDateInXliffFiles: 2018-12-13T12:02:00Z
 
 ## skip docComment (license header) ##
 #skipDocComment

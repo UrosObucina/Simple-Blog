@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Tests\Unit\Controller;
+namespace Simpleblog\Simpleblog\Tests\Unit\Controller;
 
 /**
  * Test case.
@@ -7,14 +7,14 @@ namespace Pluswerk\Simpleblog\Tests\Unit\Controller;
 class BlogControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \Pluswerk\Simpleblog\Controller\BlogController
+     * @var \Simpleblog\Simpleblog\Controller\BlogController
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = $this->getMockBuilder(\Pluswerk\Simpleblog\Controller\BlogController::class)
+        $this->subject = $this->getMockBuilder(\Simpleblog\Simpleblog\Controller\BlogController::class)
             ->setMethods(['redirect', 'forward', 'addFlashMessage'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -35,7 +35,7 @@ class BlogControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $blogRepository = $this->getMockBuilder(\Pluswerk\Simpleblog\Domain\Repository\BlogRepository::class)
+        $blogRepository = $this->getMockBuilder(\Simpleblog\Simpleblog\Domain\Repository\BlogRepository::class)
             ->setMethods(['findAll'])
             ->disableOriginalConstructor()
             ->getMock();

@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Domain\Model;
+namespace Simpleblog\Simpleblog\Domain\Model;
 
 /***
  *
@@ -21,7 +21,6 @@ class Comment extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * comment
      *
      * @var string
-     * @validate NotEmpty
      */
     protected $comment = '';
 

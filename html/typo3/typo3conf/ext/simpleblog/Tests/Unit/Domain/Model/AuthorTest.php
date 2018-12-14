@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Tests\Unit\Domain\Model;
+namespace Simpleblog\Simpleblog\Tests\Unit\Domain\Model;
 
 /**
  * Test case.
@@ -7,14 +7,14 @@ namespace Pluswerk\Simpleblog\Tests\Unit\Domain\Model;
 class AuthorTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \Pluswerk\Simpleblog\Domain\Model\Author
+     * @var \Simpleblog\Simpleblog\Domain\Model\Author
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = new \Pluswerk\Simpleblog\Domain\Model\Author();
+        $this->subject = new \Simpleblog\Simpleblog\Domain\Model\Author();
     }
 
     protected function tearDown()
@@ -50,24 +50,24 @@ class AuthorTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getEmialReturnsInitialValueForString()
+    public function getEmailReturnsInitialValueForString()
     {
         self::assertSame(
             '',
-            $this->subject->getEmial()
+            $this->subject->getEmail()
         );
     }
 
     /**
      * @test
      */
-    public function setEmialForStringSetsEmial()
+    public function setEmailForStringSetsEmail()
     {
-        $this->subject->setEmial('Conceived at T3CON10');
+        $this->subject->setEmail('Conceived at T3CON10');
 
         self::assertAttributeEquals(
             'Conceived at T3CON10',
-            'emial',
+            'email',
             $this->subject
         );
     }

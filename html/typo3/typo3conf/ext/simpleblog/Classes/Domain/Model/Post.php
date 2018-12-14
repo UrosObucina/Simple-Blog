@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Domain\Model;
+namespace Simpleblog\Simpleblog\Domain\Model;
 
 /***
  *
@@ -42,23 +42,23 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * comments
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Comment>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Comment>
      * @cascade remove
      * @lazy
      */
     protected $comments = null;
 
     /**
-     * authors
+     * author
      *
-     * @var \Pluswerk\Simpleblog\Domain\Model\Author
+     * @var \Simpleblog\Simpleblog\Domain\Model\Author
      */
-    protected $authors = null;
+    protected $author = null;
 
     /**
      * tags
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Tag>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Tag>
      */
     protected $tags = null;
 
@@ -151,10 +151,10 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Adds a Comment
      *
-     * @param \Pluswerk\Simpleblog\Domain\Model\Comment $comment
+     * @param \Simpleblog\Simpleblog\Domain\Model\Comment $comment
      * @return void
      */
-    public function addComment(\Pluswerk\Simpleblog\Domain\Model\Comment $comment)
+    public function addComment(\Simpleblog\Simpleblog\Domain\Model\Comment $comment)
     {
         $this->comments->attach($comment);
     }
@@ -162,10 +162,10 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Removes a Comment
      *
-     * @param \Pluswerk\Simpleblog\Domain\Model\Comment $commentToRemove The Comment to be removed
+     * @param \Simpleblog\Simpleblog\Domain\Model\Comment $commentToRemove The Comment to be removed
      * @return void
      */
-    public function removeComment(\Pluswerk\Simpleblog\Domain\Model\Comment $commentToRemove)
+    public function removeComment(\Simpleblog\Simpleblog\Domain\Model\Comment $commentToRemove)
     {
         $this->comments->detach($commentToRemove);
     }
@@ -173,7 +173,7 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the comments
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Comment> $comments
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Comment> $comments
      */
     public function getComments()
     {
@@ -183,7 +183,7 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the comments
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Comment> $comments
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Comment> $comments
      * @return void
      */
     public function setComments(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $comments)
@@ -192,33 +192,33 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the authors
+     * Returns the author
      *
-     * @return \Pluswerk\Simpleblog\Domain\Model\Author $authors
+     * @return \Simpleblog\Simpleblog\Domain\Model\Author $author
      */
-    public function getAuthors()
+    public function getAuthor()
     {
-        return $this->authors;
+        return $this->author;
     }
 
     /**
-     * Sets the authors
+     * Sets the author
      *
-     * @param \Pluswerk\Simpleblog\Domain\Model\Author $authors
+     * @param \Simpleblog\Simpleblog\Domain\Model\Author $author
      * @return void
      */
-    public function setAuthors(\Pluswerk\Simpleblog\Domain\Model\Author $authors)
+    public function setAuthor(\Simpleblog\Simpleblog\Domain\Model\Author $author)
     {
-        $this->authors = $authors;
+        $this->author = $author;
     }
 
     /**
      * Adds a Tag
      *
-     * @param \Pluswerk\Simpleblog\Domain\Model\Tag $tag
+     * @param \Simpleblog\Simpleblog\Domain\Model\Tag $tag
      * @return void
      */
-    public function addTag(\Pluswerk\Simpleblog\Domain\Model\Tag $tag)
+    public function addTag(\Simpleblog\Simpleblog\Domain\Model\Tag $tag)
     {
         $this->tags->attach($tag);
     }
@@ -226,10 +226,10 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Removes a Tag
      *
-     * @param \Pluswerk\Simpleblog\Domain\Model\Tag $tagToRemove The Tag to be removed
+     * @param \Simpleblog\Simpleblog\Domain\Model\Tag $tagToRemove The Tag to be removed
      * @return void
      */
-    public function removeTag(\Pluswerk\Simpleblog\Domain\Model\Tag $tagToRemove)
+    public function removeTag(\Simpleblog\Simpleblog\Domain\Model\Tag $tagToRemove)
     {
         $this->tags->detach($tagToRemove);
     }
@@ -237,7 +237,7 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the tags
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Tag> $tags
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Tag> $tags
      */
     public function getTags()
     {
@@ -247,7 +247,7 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the tags
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Tag> $tags
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Tag> $tags
      * @return void
      */
     public function setTags(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $tags)

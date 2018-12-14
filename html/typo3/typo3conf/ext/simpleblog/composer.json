@@ -1,5 +1,5 @@
 {
-    "name": "pluswerk/simpleblog",
+    "name": "simpleblog/simpleblog",
     "type": "typo3-cms-extension",
     "description": "",
     "authors": [],
@@ -8,12 +8,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Pluswerk\\Simpleblog\\": "Classes"
+            "Simpleblog\\Simpleblog\\": "Classes"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Pluswerk\\Simpleblog\\Tests\\": "Tests"
+            "Simpleblog\\Simpleblog\\Tests\\": "Tests"
         }
     },
     "replace": {

@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Tests\Unit\Domain\Model;
+namespace Simpleblog\Simpleblog\Tests\Unit\Domain\Model;
 
 /**
  * Test case.
@@ -7,14 +7,14 @@ namespace Pluswerk\Simpleblog\Tests\Unit\Domain\Model;
 class TagTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \Pluswerk\Simpleblog\Domain\Model\Tag
+     * @var \Simpleblog\Simpleblog\Domain\Model\Tag
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = new \Pluswerk\Simpleblog\Domain\Model\Tag();
+        $this->subject = new \Simpleblog\Simpleblog\Domain\Model\Tag();
     }
 
     protected function tearDown()

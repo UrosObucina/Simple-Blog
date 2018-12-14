@@ -6,14 +6,14 @@ call_user_func(
     {
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-            'Pluswerk.Simpleblog',
+            'Simpleblog.Simpleblog',
             'Bloglisting',
             [
-                'Blog' => 'list'
+                'Blog' => 'list,add,addForm,show,update,updateForm,delete'
             ],
             // non-cacheable actions
             [
-                'Blog' => ''
+                'Blog' => 'list,add,addForm,show,update,updateForm,delete'
             ]
         );
 

@@ -6,9 +6,9 @@ call_user_func(
     {
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'Pluswerk.Simpleblog',
+            'Simpleblog.Simpleblog',
             'Bloglisting',
-            'Simpleblog - Bloglisting'
+            'SimpleBlog'
         );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('simpleblog', 'Configuration/TypoScript', 'Simple Blog');

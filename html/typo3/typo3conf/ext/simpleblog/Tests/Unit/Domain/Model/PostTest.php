@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Tests\Unit\Domain\Model;
+namespace Simpleblog\Simpleblog\Tests\Unit\Domain\Model;
 
 /**
  * Test case.
@@ -7,14 +7,14 @@ namespace Pluswerk\Simpleblog\Tests\Unit\Domain\Model;
 class PostTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \Pluswerk\Simpleblog\Domain\Model\Post
+     * @var \Simpleblog\Simpleblog\Domain\Model\Post
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = new \Pluswerk\Simpleblog\Domain\Model\Post();
+        $this->subject = new \Simpleblog\Simpleblog\Domain\Model\Post();
     }
 
     protected function tearDown()
@@ -115,7 +115,7 @@ class PostTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function setCommentsForObjectStorageContainingCommentSetsComments()
     {
-        $comment = new \Pluswerk\Simpleblog\Domain\Model\Comment();
+        $comment = new \Simpleblog\Simpleblog\Domain\Model\Comment();
         $objectStorageHoldingExactlyOneComments = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneComments->attach($comment);
         $this->subject->setComments($objectStorageHoldingExactlyOneComments);
@@ -132,7 +132,7 @@ class PostTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function addCommentToObjectStorageHoldingComments()
     {
-        $comment = new \Pluswerk\Simpleblog\Domain\Model\Comment();
+        $comment = new \Simpleblog\Simpleblog\Domain\Model\Comment();
         $commentsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -149,7 +149,7 @@ class PostTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function removeCommentFromObjectStorageHoldingComments()
     {
-        $comment = new \Pluswerk\Simpleblog\Domain\Model\Comment();
+        $comment = new \Simpleblog\Simpleblog\Domain\Model\Comment();
         $commentsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()
@@ -164,25 +164,25 @@ class PostTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
-    public function getAuthorsReturnsInitialValueForAuthor()
+    public function getAuthorReturnsInitialValueForAuthor()
     {
         self::assertEquals(
             null,
-            $this->subject->getAuthors()
+            $this->subject->getAuthor()
         );
     }
 
     /**
      * @test
      */
-    public function setAuthorsForAuthorSetsAuthors()
+    public function setAuthorForAuthorSetsAuthor()
     {
-        $authorsFixture = new \Pluswerk\Simpleblog\Domain\Model\Author();
-        $this->subject->setAuthors($authorsFixture);
+        $authorFixture = new \Simpleblog\Simpleblog\Domain\Model\Author();
+        $this->subject->setAuthor($authorFixture);
 
         self::assertAttributeEquals(
-            $authorsFixture,
-            'authors',
+            $authorFixture,
+            'author',
             $this->subject
         );
     }
@@ -204,7 +204,7 @@ class PostTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function setTagsForObjectStorageContainingTagSetsTags()
     {
-        $tag = new \Pluswerk\Simpleblog\Domain\Model\Tag();
+        $tag = new \Simpleblog\Simpleblog\Domain\Model\Tag();
         $objectStorageHoldingExactlyOneTags = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOneTags->attach($tag);
         $this->subject->setTags($objectStorageHoldingExactlyOneTags);
@@ -221,7 +221,7 @@ class PostTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function addTagToObjectStorageHoldingTags()
     {
-        $tag = new \Pluswerk\Simpleblog\Domain\Model\Tag();
+        $tag = new \Simpleblog\Simpleblog\Domain\Model\Tag();
         $tagsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -238,7 +238,7 @@ class PostTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function removeTagFromObjectStorageHoldingTags()
     {
-        $tag = new \Pluswerk\Simpleblog\Domain\Model\Tag();
+        $tag = new \Simpleblog\Simpleblog\Domain\Model\Tag();
         $tagsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()

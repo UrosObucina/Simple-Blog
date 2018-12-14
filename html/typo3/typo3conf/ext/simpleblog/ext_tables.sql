@@ -55,7 +55,7 @@ CREATE TABLE tx_simpleblog_domain_model_post (
 	content text,
 	postdate datetime DEFAULT NULL,
 	comments int(11) unsigned DEFAULT '0' NOT NULL,
-	authors int(11) unsigned DEFAULT '0',
+	author int(11) unsigned DEFAULT '0',
 	tags int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE tx_simpleblog_domain_model_author (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	fullname varchar(255) DEFAULT '' NOT NULL,
-	emial varchar(255) DEFAULT '' NOT NULL,
+	email varchar(255) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

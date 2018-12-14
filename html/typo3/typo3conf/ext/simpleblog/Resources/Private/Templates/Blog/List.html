@@ -1,42 +1,38 @@
 <html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<f:layout name="Default" />
-
-	This Template is responsible for creating a table of domain objects.
-
-	If you modify this template, do not forget to change the overwrite settings
-	in /Configuration/ExtensionBuilder/settings.yaml:
-	  Resources:
-		Private:
-		  Templates:
-			List.html: keep
-
-	Otherwise your changes will be overwritten the next time you save the extension in the extension builder
-
-	<f:section name="content">
-		<h1>Listing for Blog</h1>
-
-		<f:flashMessages />
-
-		<table  class="tx_simpleblog" >
+	<h1>Blog</h1>
+	<table>
+		<tr>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Show</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		<f:for each="{blogs}" as="blog">
 			<tr>
-				<th><f:translate key="tx_simpleblog_domain_model_blog.title" /></th>
-				<th><f:translate key="tx_simpleblog_domain_model_blog.description" /></th>
-				<th><f:translate key="tx_simpleblog_domain_model_blog.image" /></th>
-				<th> </th>
-				<th> </th>
+				<td>
+					{blog.title}
+					<f:if condition="{blog.posts}">
+						<f:then>
+							<ul>
+								<f:for each="{blog.posts}" as="post">
+									<li>{post.title}</li>
+								</f:for>
+							</ul>
+						</f:then>
+						<f:else>
+							<p>There are no posts!<p>
+						</f:else>
+					</f:if>
+				</td>
+				<td>{blog.description}</td>
+				<td><f:link.action action="show" arguments="{blog:blog}">Show</f:link.action></td>
+				<td><f:link.action action="updateForm" arguments="{blog:blog}">Update</f:link.action></td>
+				<td>
+					<f:link.action class="deleteBlog" action="delete" arguments="{blog:blog.uid}" >Delete</f:link.action>
+				</td>
 			</tr>
-
-			<f:for each="{blogs}" as="blog">
-				<tr>
-					<td><f:link.action action="show" arguments="{blog : blog}"> {blog.title}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{blog : blog}"> {blog.description}</f:link.action></td>
-					<td><f:link.action action="show" arguments="{blog : blog}"> {blog.image.originalResource.name}</f:link.action></td>
-					<td><f:link.action action="edit" arguments="{blog : blog}">Edit</f:link.action></td>
-					<td><f:link.action action="delete" arguments="{blog : blog}">Delete</f:link.action></td>
-				</tr>
-			</f:for>
-		</table>
-
-		<f:link.action action="new">New Blog</f:link.action>
-	</f:section>
+		</f:for>
+	</table>
+	<f:link.action action="addForm">Form to Add new</f:link.action>
 </html>

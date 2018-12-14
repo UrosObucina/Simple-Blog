@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Tests\Unit\Domain\Model;
+namespace Simpleblog\Simpleblog\Tests\Unit\Domain\Model;
 
 /**
  * Test case.
@@ -7,14 +7,14 @@ namespace Pluswerk\Simpleblog\Tests\Unit\Domain\Model;
 class BlogTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
-     * @var \Pluswerk\Simpleblog\Domain\Model\Blog
+     * @var \Simpleblog\Simpleblog\Domain\Model\Blog
      */
     protected $subject = null;
 
     protected function setUp()
     {
         parent::setUp();
-        $this->subject = new \Pluswerk\Simpleblog\Domain\Model\Blog();
+        $this->subject = new \Simpleblog\Simpleblog\Domain\Model\Blog();
     }
 
     protected function tearDown()
@@ -115,7 +115,7 @@ class BlogTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function setPostsForObjectStorageContainingPostSetsPosts()
     {
-        $post = new \Pluswerk\Simpleblog\Domain\Model\Post();
+        $post = new \Simpleblog\Simpleblog\Domain\Model\Post();
         $objectStorageHoldingExactlyOnePosts = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $objectStorageHoldingExactlyOnePosts->attach($post);
         $this->subject->setPosts($objectStorageHoldingExactlyOnePosts);
@@ -132,7 +132,7 @@ class BlogTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function addPostToObjectStorageHoldingPosts()
     {
-        $post = new \Pluswerk\Simpleblog\Domain\Model\Post();
+        $post = new \Simpleblog\Simpleblog\Domain\Model\Post();
         $postsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['attach'])
             ->disableOriginalConstructor()
@@ -149,7 +149,7 @@ class BlogTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function removePostFromObjectStorageHoldingPosts()
     {
-        $post = new \Pluswerk\Simpleblog\Domain\Model\Post();
+        $post = new \Simpleblog\Simpleblog\Domain\Model\Post();
         $postsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
             ->setMethods(['detach'])
             ->disableOriginalConstructor()

@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Domain\Model;
+namespace Simpleblog\Simpleblog\Domain\Model;
 
 /***
  *
@@ -43,7 +43,7 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * posts
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Post>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Post>
      * @cascade remove
      * @lazy
      */
@@ -137,10 +137,10 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Adds a Post
      *
-     * @param \Pluswerk\Simpleblog\Domain\Model\Post $post
+     * @param \Simpleblog\Simpleblog\Domain\Model\Post $post
      * @return void
      */
-    public function addPost(\Pluswerk\Simpleblog\Domain\Model\Post $post)
+    public function addPost(\Simpleblog\Simpleblog\Domain\Model\Post $post)
     {
         $this->posts->attach($post);
     }
@@ -148,10 +148,10 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Removes a Post
      *
-     * @param \Pluswerk\Simpleblog\Domain\Model\Post $postToRemove The Post to be removed
+     * @param \Simpleblog\Simpleblog\Domain\Model\Post $postToRemove The Post to be removed
      * @return void
      */
-    public function removePost(\Pluswerk\Simpleblog\Domain\Model\Post $postToRemove)
+    public function removePost(\Simpleblog\Simpleblog\Domain\Model\Post $postToRemove)
     {
         $this->posts->detach($postToRemove);
     }
@@ -159,7 +159,7 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Returns the posts
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Post> $posts
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Post> $posts
      */
     public function getPosts()
     {
@@ -169,7 +169,7 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the posts
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Pluswerk\Simpleblog\Domain\Model\Post> $posts
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Simpleblog\Simpleblog\Domain\Model\Post> $posts
      * @return void
      */
     public function setPosts(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $posts)

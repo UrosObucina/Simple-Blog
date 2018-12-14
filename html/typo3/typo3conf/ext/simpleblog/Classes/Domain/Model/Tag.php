@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Domain\Model;
+namespace Simpleblog\Simpleblog\Domain\Model;
 
 /***
  *

@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Domain\Model;
+namespace Simpleblog\Simpleblog\Domain\Model;
 
 /***
  *
@@ -26,12 +26,12 @@ class Author extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $fullname = '';
 
     /**
-     * emial
+     * email
      *
      * @var string
      * @validate NotEmpty
      */
-    protected $emial = '';
+    protected $email = '';
 
     /**
      * Returns the fullname
@@ -55,23 +55,23 @@ class Author extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the emial
+     * Returns the email
      *
-     * @return string $emial
+     * @return string $email
      */
-    public function getEmial()
+    public function getEmail()
     {
-        return $this->emial;
+        return $this->email;
     }
 
     /**
-     * Sets the emial
+     * Sets the email
      *
-     * @param string $emial
+     * @param string $email
      * @return void
      */
-    public function setEmial($emial)
+    public function setEmail($email)
     {
-        $this->emial = $emial;
+        $this->email = $email;
     }
 }

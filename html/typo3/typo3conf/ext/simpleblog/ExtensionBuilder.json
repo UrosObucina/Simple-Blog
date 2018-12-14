@@ -3,8 +3,8 @@
         {
             "config": {
                 "position": [
-                    21,
-                    94
+                    73,
+                    97
                 ]
             },
             "name": "New Model Object",
@@ -30,7 +30,7 @@
                     "skipTypeConfiguration": false,
                     "sorting": false,
                     "type": "Entity",
-                    "uid": "951357670341"
+                    "uid": "383845525064"
                 },
                 "propertyGroup": {
                     "properties": [
@@ -43,7 +43,7 @@
                             "propertyIsRequired": true,
                             "propertyName": "title",
                             "propertyType": "String",
-                            "uid": "1487478771080"
+                            "uid": "1034691000322"
                         },
                         {
                             "allowedFileTypes": "",
@@ -54,7 +54,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "description",
                             "propertyType": "Text",
-                            "uid": "1288564938897"
+                            "uid": "499068030672"
                         },
                         {
                             "allowedFileTypes": "",
@@ -65,7 +65,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "image",
                             "propertyType": "Image",
-                            "uid": "1252068039364"
+                            "uid": "87836108177"
                         }
                     ]
                 },
@@ -80,7 +80,7 @@
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "renderType": "inline",
-                            "uid": "1041703188734"
+                            "uid": "695322080613"
                         }
                     ]
                 }
@@ -89,8 +89,8 @@
         {
             "config": {
                 "position": [
-                    747,
-                    21
+                    397,
+                    116
                 ]
             },
             "name": "New Model Object",
@@ -116,7 +116,7 @@
                     "skipTypeConfiguration": false,
                     "sorting": false,
                     "type": "Entity",
-                    "uid": "558556120350"
+                    "uid": "1218020229925"
                 },
                 "propertyGroup": {
                     "properties": [
@@ -129,7 +129,7 @@
                             "propertyIsRequired": true,
                             "propertyName": "title",
                             "propertyType": "String",
-                            "uid": "206089525911"
+                            "uid": "715053415395"
                         },
                         {
                             "allowedFileTypes": "",
@@ -140,7 +140,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "content",
                             "propertyType": "Text",
-                            "uid": "458415612822"
+                            "uid": "947331188718"
                         },
                         {
                             "allowedFileTypes": "",
@@ -151,7 +151,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "postdate",
                             "propertyType": "NativeDateTime",
-                            "uid": "638761373246"
+                            "uid": "883593311121"
                         }
                     ]
                 },
@@ -166,18 +166,18 @@
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "renderType": "inline",
-                            "uid": "893717368346"
+                            "uid": "661980504893"
                         },
                         {
                             "foreignRelationClass": "",
                             "lazyLoading": false,
                             "propertyIsExcludeField": false,
                             "relationDescription": "",
-                            "relationName": "authors",
+                            "relationName": "author",
                             "relationType": "zeroToOne",
                             "relationWire": "[wired]",
                             "renderType": "selectSingleBox",
-                            "uid": "1421334435556"
+                            "uid": "1016136969141"
                         },
                         {
                             "foreignRelationClass": "",
@@ -188,7 +188,7 @@
                             "relationType": "manyToMany",
                             "relationWire": "[wired]",
                             "renderType": "selectSingleBox",
-                            "uid": "997922665374"
+                            "uid": "217591916241"
                         }
                     ]
                 }
@@ -197,8 +197,8 @@
         {
             "config": {
                 "position": [
-                    276,
-                    223
+                    752,
+                    119
                 ]
             },
             "name": "New Model Object",
@@ -224,7 +224,7 @@
                     "skipTypeConfiguration": false,
                     "sorting": false,
                     "type": "Entity",
-                    "uid": "1061767510383"
+                    "uid": "530888749912"
                 },
                 "propertyGroup": {
                     "properties": [
@@ -234,10 +234,10 @@
                             "propertyDescription": "",
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
-                            "propertyIsRequired": true,
+                            "propertyIsRequired": false,
                             "propertyName": "comment",
                             "propertyType": "Text",
-                            "uid": "946084046638"
+                            "uid": "665153772524"
                         },
                         {
                             "allowedFileTypes": "",
@@ -248,7 +248,7 @@
                             "propertyIsRequired": false,
                             "propertyName": "commentdate",
                             "propertyType": "NativeDateTime",
-                            "uid": "435881946814"
+                            "uid": "494197599830"
                         }
                     ]
                 },
@@ -260,8 +260,8 @@
         {
             "config": {
                 "position": [
-                    276,
-                    510
+                    47,
+                    393
                 ]
             },
             "name": "New Model Object",
@@ -287,7 +287,7 @@
                     "skipTypeConfiguration": false,
                     "sorting": false,
                     "type": "Entity",
-                    "uid": "1322529833087"
+                    "uid": "238742152391"
                 },
                 "propertyGroup": {
                     "properties": [
@@ -300,7 +300,7 @@
                             "propertyIsRequired": true,
                             "propertyName": "fullname",
                             "propertyType": "String",
-                            "uid": "555033748235"
+                            "uid": "1254274149963"
                         },
                         {
                             "allowedFileTypes": "",
@@ -309,9 +309,9 @@
                             "propertyIsExcludeField": false,
                             "propertyIsL10nModeExclude": false,
                             "propertyIsRequired": true,
-                            "propertyName": "emial",
+                            "propertyName": "email",
                             "propertyType": "String",
-                            "uid": "854400356973"
+                            "uid": "526422864680"
                         }
                     ]
                 },
@@ -323,8 +323,8 @@
         {
             "config": {
                 "position": [
-                    745,
-                    365
+                    461,
+                    426
                 ]
             },
             "name": "New Model Object",
@@ -350,7 +350,7 @@
                     "skipTypeConfiguration": false,
                     "sorting": false,
                     "type": "ValueObject",
-                    "uid": "1396813801034"
+                    "uid": "192650099506"
                 },
                 "propertyGroup": {
                     "properties": [
@@ -363,7 +363,7 @@
                             "propertyIsRequired": true,
                             "propertyName": "tagvalue",
                             "propertyType": "String",
-                            "uid": "1289144188919"
+                            "uid": "490454198964"
                         }
                     ]
                 },
@@ -396,69 +396,69 @@
         "plugins": [
             {
                 "actions": {
-                    "controllerActionCombinations": "",
-                    "noncacheableActions": "",
+                    "controllerActionCombinations": "Blog => list",
+                    "noncacheableActions": "Blog => list",
                     "switchableActions": ""
                 },
                 "description": "",
                 "key": "bloglisting",
-                "name": "Simpleblog - Bloglisting"
+                "name": "SimpleBlog"
             }
         ],
-        "vendorName": "Pluswerk"
+        "vendorName": "Simpleblog"
     },
     "wires": [
         {
             "src": {
                 "moduleId": 0,
                 "terminal": "relationWire_0",
-                "uid": "1041703188734"
+                "uid": "695322080613"
             },
             "tgt": {
                 "moduleId": 1,
                 "terminal": "SOURCES",
-                "uid": "558556120350"
+                "uid": "1218020229925"
             }
         },
         {
             "src": {
                 "moduleId": 1,
                 "terminal": "relationWire_0",
-                "uid": "893717368346"
+                "uid": "661980504893"
             },
             "tgt": {
                 "moduleId": 2,
                 "terminal": "SOURCES",
-                "uid": "1061767510383"
+                "uid": "530888749912"
             }
         },
         {
             "src": {
                 "moduleId": 1,
                 "terminal": "relationWire_1",
-                "uid": "1421334435556"
+                "uid": "1016136969141"
             },
             "tgt": {
                 "moduleId": 3,
                 "terminal": "SOURCES",
-                "uid": "1322529833087"
+                "uid": "238742152391"
             }
         },
         {
             "src": {
                 "moduleId": 1,
                 "terminal": "relationWire_2",
-                "uid": "997922665374"
+                "uid": "217591916241"
             },
             "tgt": {
                 "moduleId": 4,
                 "terminal": "SOURCES",
-                "uid": "1396813801034"
+                "uid": "192650099506"
             }
         }
     ],
     "log": {
-        "last_modified": "2018-12-13 08:19",
+        "last_modified": "2018-12-13 12:02",
         "extension_builder_version": "8.10.2",
         "be_user": " (3)"
     }

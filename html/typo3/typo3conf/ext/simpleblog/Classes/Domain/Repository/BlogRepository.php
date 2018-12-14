@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Domain\Repository;
+namespace Simpleblog\Simpleblog\Domain\Repository;
 
 /***
  *

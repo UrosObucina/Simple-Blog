@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-12-13T08:19:52Z" product-name="simpleblog">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-12-13T12:02:44Z" product-name="simpleblog">
 		<header/>
 		<body>
 			<trans-unit id="comment.description">

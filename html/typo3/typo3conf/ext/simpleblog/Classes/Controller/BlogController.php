@@ -1,5 +1,5 @@
 <?php
-namespace Pluswerk\Simpleblog\Controller;
+namespace Simpleblog\Simpleblog\Controller;
 
 /***
  *
@@ -20,10 +20,18 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     /**
      * blogRepository
      *
-     * @var \Pluswerk\Simpleblog\Domain\Repository\BlogRepository
+     * @var \Simpleblog\Simpleblog\Domain\Repository\BlogRepository
      * @inject
      */
     protected $blogRepository = null;
+
+    /**
+     * @param \Simpleblog\Simpleblog\Domain\Repository\BlogRepository $blogRepository
+     */
+    public function injectBlogRepository(\Simpleblog\Simpleblog\Domain\Repository\BlogRepository $blogRepository)
+    {
+        $this->blogRepository = $blogRepository;
+    }
 
     /**
      * action list
@@ -32,7 +40,55 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $blogs = $this->blogRepository->findAll();
-        $this->view->assign('blogs', $blogs);
+        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($blogs);die;
+        $this->view->assign('blogs', $this->blogRepository->findAll());
+    }
+
+    /**
+     * action add
+     */
+    public function addAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
+    {
+        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($blog);die;
+        $this->blogRepository->add($blog);
+        $this->redirect('list');
+    }
+    /**
+     * @param \Simpleblog\Simpleblog\Domain\Model\Blog|NULL $blog
+     */
+    public function addFormAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog = NULL)
+    {
+        $this->view->assign('blog',$blog);
+    }
+    /**
+     * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
+     */
+    public function showAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
+    {
+        $this->view->assign('blog',$blog);
+    }
+
+    /**
+     * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
+     */
+    public function updateFormAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
+    {
+        $this->view->assign('blog',$blog);
+    }
+
+    /**
+     * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
+     */
+    public function updateAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
+    {
+        $this->blogRepository->update($blog);
+        $this->redirect('list');
+    }
+    /**
+     * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
+     */
+    public function deleteAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
+    {
+        $this->blogRepository->remove($blog);
     }
 }
