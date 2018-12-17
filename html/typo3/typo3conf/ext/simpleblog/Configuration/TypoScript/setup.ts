@@ -21,6 +21,24 @@ plugin.tx_simpleblog_bloglisting {
     }
     mvc {
         #callDefaultActionIfActionCantBeResolved = 1
+     }
+    // settings {
+    //     blog {
+    //         max = 5
+    //     }
+    // }
+    objects {
+        TYPO3\CMS\Fluid\Core\Parser\TemplateParser {
+            className = Simpleblog\Simpleblog\View\TemplateParser
+        }
+    }
+    _LOCAL_LANG {
+    default {
+            linkLabel = English link
+        }
+        de {
+            linkLabel = Deutscher Link
+        }
     }
 }
 
@@ -57,3 +75,19 @@ plugin.tx_simpleblog._CSS_DEFAULT_STYLE (
         color:green;
     }
 )
+plugin.tx_simpleblog {
+    settings {
+        blog {
+            max = 5
+        }
+    }
+}
+// config.tx_extbase {
+//     mvc {
+//         requestHandlers {
+//             TYPO3\CMS\Extbase\Mvc\Web\FrontendRequestHandler = TYPO3\CMS\Extbase\Mvc\Web\FrontendRequestHandler
+//             TYPO3\CMS\Extbase\Mvc\Web\BackendRequestHandler = TYPO3\CMS\Extbase\Mvc\Web\BackendRequestHandler
+//             TYPO3\CMS\Extbase\Mvc\Cli\RequestHandler = TYPO3\CMS\Extbase\Mvc\Cli\RequestHandler
+//         }
+//     }
+// }

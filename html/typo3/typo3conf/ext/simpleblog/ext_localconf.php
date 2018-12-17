@@ -9,11 +9,11 @@ call_user_func(
             'Simpleblog.Simpleblog',
             'Bloglisting',
             [
-                'Blog' => 'list,add,addForm,show,update,updateForm,delete'
+                'Blog' => 'list,add,addForm,show,update,updateForm,delete,deleteForm'
             ],
             // non-cacheable actions
             [
-                'Blog' => 'list,add,addForm,show,update,updateForm,delete'
+                'Blog' => 'list,add,addForm,show,update,updateForm,delete,deleteForm'
             ]
         );
 

@@ -1,5 +1,13 @@
 <html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 	<h1>Blog</h1>
+	<f:form action="list" additionalAttributes="{role:'form'}">
+		<div class="form-inline">
+			<div class="form-group">
+				<f:form.textfield name="search" value="{search}" class="form-control" />
+				<f:form.submit value="Search!" class="btn-xs btn-primary" />
+			</div>
+		</div>
+	</f:form>
 	<table>
 		<tr>
 			<th>Title</th>
@@ -28,11 +36,12 @@
 				<td>{blog.description}</td>
 				<td><f:link.action action="show" arguments="{blog:blog}">Show</f:link.action></td>
 				<td><f:link.action action="updateForm" arguments="{blog:blog}">Update</f:link.action></td>
-				<td>
-					<f:link.action class="deleteBlog" action="delete" arguments="{blog:blog.uid}" >Delete</f:link.action>
-				</td>
+				<td><f:link.action action="deleteForm" arguments="{blog:blog}">Delete</f:link.action></td>
 			</tr>
 		</f:for>
 	</table>
 	<f:link.action action="addForm">Form to Add new</f:link.action>
+	<f:link.action arguments="{blog: blog}" format="txt">
+		[plaintext]
+	</f:link.action>
 </html>

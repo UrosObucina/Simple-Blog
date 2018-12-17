@@ -1,0 +1,29 @@
+<html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<h1>Blog</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>
+            {blog.title}
+            <f:if condition="{blog.posts}">
+                <f:then>
+                    <ul>
+                        <f:for each="{blog.posts}" as="post">
+                            <li>{post.title}</li>
+                        </f:for>
+                    </ul>
+                </f:then>
+                <f:else>
+                    <p>There are no posts!<p>
+                </f:else>
+            </f:if>
+        </td>
+        <td>{blog.description}</td>
+    </tr>
+</table>
+<f:link.action action="list">Go back to List</f:link.action>
+<f:link.action action="delete" arguments="{blog:blog}">Delete it!</f:link.action>
+</html>

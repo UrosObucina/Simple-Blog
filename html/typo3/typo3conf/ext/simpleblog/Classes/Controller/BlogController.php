@@ -34,14 +34,18 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     }
 
     /**
-     * action list
-     *
-     * @return void
+     * @param string $search
      */
     public function listAction()
     {
-        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($blogs);die;
-        $this->view->assign('blogs', $this->blogRepository->findAll());
+        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($this->settings['blog']['max']);
+        if($this->request->hasArgument('serach'))
+        {
+            $search = $this->request->getArgument('search');
+        }
+        $this->view->assign('blogs', $this->blogRepository->findSearchForm($search,$this->settings['blog']['max']));
+        $this->view->assign('search', $search);
+        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($search);
     }
 
     /**
@@ -90,5 +94,47 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     public function deleteAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
     {
         $this->blogRepository->remove($blog);
+        $this->redirect('list');
     }
+    /**
+     * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
+     */
+    public function deleteFormAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
+    {
+        $this->view->assign('blog',$blog);
+    }
+
+    /**
+     *
+     */
+    public function initializeObject()
+    {
+        // determine query settings
+        /** @var $querySettings \TYPO3\CMS\Extbase\Persistence\GenericTypo3QuerySettings */
+        $querySettings = $this->objectManager->get('TYPO3\\CMS\\Extbase\\Persistence\\Generic\\Typo3QuerySettings');
+        // go for $defaultQuerySettings = $this->createQuery()->getQuerySettings();
+        // ignore storage PID initially
+                $querySettings->setRespectStoragePage(FALSE);
+        // set new storage PID
+                $querySettings->setStoragePageIds(array(1, 26, 989));
+        // ignore fields of "enablecolumns"
+                $querySettings->setIgnoreEnableFields(TRUE);
+        // ignore fields "disabled" and "starttime"
+                $querySettings->setEnableFieldsToBeIgnored(array('disabled','starttime'));
+        // include "deleted" records
+                $querySettings->setIncludeDeleted(TRUE);
+        // ignore language initially
+                $querySettings->setRespectSysLanguage(FALSE);
+            }
+        // example for a repository method
+
+    /**
+     * @return mixed
+     */
+    public function findSomething() {
+                $query = $this->createQuery();
+        // ignore storage PID initially
+                $query->getQuerySettings()->setRespectStoragePage(FALSE);
+                return $query->execute();
+            }
 }

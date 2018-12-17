@@ -28,4 +28,7 @@ $EM_CONF[$_EXTKEY] = [
         'conflicts' => [],
         'suggests' => [],
     ],
+    'autoload' => array(
+        'psr-4' => array('Simpleblog\\Simpleblog\\' => 'Classes')
+    ),
 ];
