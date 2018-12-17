@@ -11,6 +11,20 @@ plugin.tx_simpleblog_bloglisting {
     persistence {
         storagePid = {$plugin.tx_simpleblog_bloglisting.persistence.storagePid}
         #recursive = 1
+        storagePid = 43
+        classes {
+            Typovision\Simpleblog\Domain\Model\Author {
+                newRecordStoragePid = 27
+                mapping {
+                    tableName = fe_users
+                    columns {
+                        name.mapOnProperty = fullname
+                    }
+                }
+            }
+        }
+        storagePid = 12,7,2
+        storagePid.recursive = 3
     }
     features {
         #skipDefaultArguments = 1
@@ -38,6 +52,41 @@ plugin.tx_simpleblog_bloglisting {
         }
         de {
             linkLabel = Deutscher Link
+        }
+    }
+    // lib.sb_bloglisting = USER
+    // lib.sb_bloglisting {
+    //     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    //     extensionName = Simpleblog
+    //     pluginName = Bloglisting
+    //     vendorName = Simpleblog
+    //     controller = Blog
+    //     action = list
+    //     switchableControllerActions {
+    //         Blog {
+    //             1 = list
+    //             2 = show
+    //         }
+    //     }
+    //     view < plugin.tx_simpleblog_bloglisting.view
+    //     persistence < plugin.tx_simpleblog_bloglisting.persistence
+    //     settings < plugin.tx_simpleblog_bloglisting.settings
+    // }
+# storagePid = 0,32,33,34,35
+    storagePid = 31
+    recursive = 1
+    classes {
+        Simpleblog\Simpleblog\Domain\Model\Blog {
+            newRecordStoragePid = 32
+        }
+        Simpleblog\Simpleblog\Domain\Model\Post {
+            newRecordStoragePid = 33
+        }
+        Simpleblog\Simpleblog\Domain\Model\Comment {
+            newRecordStoragePid = 34
+        }
+        Simpleblog\Simpleblog\Domain\Model\Tag {
+            newRecordStoragePid = 35
         }
     }
 }
@@ -78,7 +127,15 @@ plugin.tx_simpleblog._CSS_DEFAULT_STYLE (
 plugin.tx_simpleblog {
     settings {
         blog {
-            max = 5
+            max = 6
+        }
+    }
+    view.defaultPid=43
+}
+config.tx_extbase {
+    objects {
+        TYPO3\CMS\Fluid\Core\Parser\TemplateParser {
+            className = Simpleblog\Simpleblog\View\TemplateParser
         }
     }
 }
@@ -91,3 +148,4 @@ plugin.tx_simpleblog {
 //         }
 //     }
 // }
+module.tx_simpleblog < plugin.tx_simpleblog

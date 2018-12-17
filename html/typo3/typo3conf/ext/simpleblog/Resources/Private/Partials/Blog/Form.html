@@ -1,4 +1,7 @@
 <h1>{headline}</h1>
+<div class="alert alert-danger">
+    <f:render partial="Error" arguments="{object:'blog'}"/>
+</div>
 <f:form action="{action}" name="blog" object="{blog}" additionalAttributes="{role:'form'}">
     <div class="form-group">
         <label>Blog Title</label>

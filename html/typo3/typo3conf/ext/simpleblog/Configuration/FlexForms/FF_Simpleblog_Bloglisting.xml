@@ -7,6 +7,24 @@
                 </TCEforms>
                 <type>array</type>
                 <el>
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>Type</label>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">read only</numIndex>
+                                        <numIndex index="1">Blog->list;Blog->show</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">writable</numIndex>
+                                        <numIndex index="1">Blog->list;Blog->show;Blog->deleteConfirm;Blog->delete</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
                     <settings.blog.max>
                         <TCEforms>
                             <label>Max Number of Blogs</label>

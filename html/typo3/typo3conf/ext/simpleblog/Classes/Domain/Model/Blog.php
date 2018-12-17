@@ -20,8 +20,9 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * title
      *
-     * @var string
+     * @var \string
      * @validate NotEmpty
+     * @validate StringLength(minimum=3, maximum=50)
      */
     protected $title = '';
 

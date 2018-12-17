@@ -49,7 +49,10 @@ class BlogRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
             $query->like('title','%'.$search.'%')
         );
         $query->setOrderings(array('title' => \TYPO3\CMS\Extbase\Persistence\QueryInterface::ORDER_ASCENDING));
-        $query->setLimit(intval($limit));
+        $limit = (int)$limit;
+        if ($limit > 0) {
+            $query->setLimit($limit);
+        }
         return $query->execute();
     }
 }
