@@ -21,11 +21,9 @@ class Blog extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * title
      *
      * @var \string
-     * @validate NotEmpty
-     * @validate StringLength(minimum=3, maximum=50)
+     * @validate NotEmpty, Simpleblog.Simpleblog:Word(max=3)
      */
     protected $title = '';
-
     /**
      * description
      *

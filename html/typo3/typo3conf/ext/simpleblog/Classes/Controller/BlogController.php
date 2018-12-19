@@ -38,7 +38,7 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($this->settings['blog']['max']);
+        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($this->settings['blog']['max']);
         if($this->request->hasArgument('serach'))
         {
             $search = $this->request->getArgument('search');
@@ -50,8 +50,9 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     }
 
     /**
-     * action add
-     * @ignorevalidation $blog
+     * add action - adds a blog to the repository
+     * @validate $blog Simpleblog.Simpleblog:Autocomplete(property=title)
+     * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
      */
     public function addAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
     {
@@ -67,6 +68,7 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->view->assign('blog',$blog);
     }
     /**
+     * @ignorevalidation $blog
      * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
      */
     public function showAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
@@ -91,6 +93,7 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->redirect('list');
     }
     /**
+     *  @ignorevalidation $blog
      * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
      */
     public function deleteAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)
@@ -99,6 +102,7 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->redirect('list');
     }
     /**
+     *  @ignorevalidation $blog
      * @param \Simpleblog\Simpleblog\Domain\Model\Blog $blog
      */
     public function deleteFormAction(\Simpleblog\Simpleblog\Domain\Model\Blog $blog)

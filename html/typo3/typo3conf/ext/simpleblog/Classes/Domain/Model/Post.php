@@ -67,8 +67,9 @@ class Post extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     public function __construct()
     {
-        //Do not remove the next line: It would break the functionality
+    // do not remove the next line: this would break the functionality
         $this->initStorageObjects();
+        $this->setPostdate(new \DateTime());
     }
 
     /**

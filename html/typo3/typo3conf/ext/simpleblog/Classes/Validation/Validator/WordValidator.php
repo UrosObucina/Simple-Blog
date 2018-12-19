@@ -1,5 +1,4 @@
 <?php
-
 namespace Simpleblog\Simpleblog\Validation\Validator;
 class WordValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractValidator
 {
@@ -9,7 +8,9 @@ class WordValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractVali
 
     public function isValid($property)
     {
+
         $max = $this->options['max'];
+
         if (str_word_count($property, 0) <= $max) {
             return TRUE;
         } else {
@@ -19,5 +20,4 @@ class WordValidator extends \TYPO3\CMS\Extbase\Validation\Validator\AbstractVali
         }
     }
 }
-
 ?>

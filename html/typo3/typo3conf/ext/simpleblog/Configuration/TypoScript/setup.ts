@@ -127,7 +127,7 @@ plugin.tx_simpleblog._CSS_DEFAULT_STYLE (
 plugin.tx_simpleblog {
     settings {
         blog {
-            max = 6
+            max = 15
         }
     }
     view.defaultPid=43
