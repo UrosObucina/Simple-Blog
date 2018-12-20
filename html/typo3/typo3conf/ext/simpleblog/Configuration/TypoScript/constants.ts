@@ -9,7 +9,28 @@ plugin.tx_simpleblog_bloglisting {
         layoutRootPath = EXT:simpleblog/Resources/Private/Layouts/
     }
     persistence {
-        # cat=plugin.tx_simpleblog_bloglisting//a; type=string; label=Default storage PID
-        storagePid =
+        // # cat=plugin.tx_simpleblog_bloglisting//a; type=string; label=Default storage PID
+        // storagePid =31
+        storagePid = 31
+        recursive = 1
+        classes
+        {
+            Simpleblog\Simpleblog\Domain\Model\Blog
+            {
+                newRecordStoragePid = 32
+            }
+            Simpleblog\Simpleblog\Domain\Model\Posts
+            {
+                newRecordStoragePid = 33
+            }
+            Simpleblog\Simpleblog\Domain\Model\Comment
+            {
+                newRecordStoragePid = 34
+            }
+            Simpleblog\Simpleblog\Domain\Model\Tag
+            {
+                newRecordStoragePid = 35
+            }
+        }
     }
 }

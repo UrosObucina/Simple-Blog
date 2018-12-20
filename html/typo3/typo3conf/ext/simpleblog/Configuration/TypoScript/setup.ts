@@ -9,22 +9,51 @@ plugin.tx_simpleblog_bloglisting {
         layoutRootPaths.1 = {$plugin.tx_simpleblog_bloglisting.view.layoutRootPath}
     }
     persistence {
-        storagePid = {$plugin.tx_simpleblog_bloglisting.persistence.storagePid}
-        #recursive = 1
-        storagePid = 43
-        classes {
-            Typovision\Simpleblog\Domain\Model\Author {
-                newRecordStoragePid = 27
-                mapping {
-                    tableName = fe_users
-                    columns {
-                        name.mapOnProperty = fullname
-                    }
+        // storagePid = {$plugin.tx_simpleblog_bloglisting.persistence.storagePid}
+        // #recursive = 1
+        // storagePid = 43
+        // classes {
+        //     Typovision\Simpleblog\Domain\Model\Author {
+        //         newRecordStoragePid = 27
+        //         mapping {
+        //             tableName = fe_users
+        //             columns {
+        //                 name.mapOnProperty = fullname
+        //             }
+        //         }
+        //     }
+        // }
+        // storagePid = 12,7,2
+        // storagePid.recursive = 3
+        storagePid = 0,31,32,34,35
+        # recursive = 1
+        classes
+        {
+            Simpleblog\Simpleblog\Domain\Model\Blog
+            {
+                newRecordStoragePid = 32
+            }
+            Simpleblog\Simpleblog\Domain\Model\Posts
+            {
+                newRecordStoragePid = 33
+            }
+            Simpleblog\Simpleblog\Domain\Model\Comment
+            {
+                newRecordStoragePid = 34
+            }
+            Simpleblog\Simpleblog\Domain\Model\Tag
+            {
+                newRecordStoragePid = 35
+            }
+            Simpleblog\Simpleblog\Domain\Model\Author {
+            mapping {
+                tableName = fe_users
+                columns {
+                    name.mapOnProperty = fullname
                 }
             }
         }
-        storagePid = 12,7,2
-        storagePid.recursive = 3
+        }
     }
     features {
         #skipDefaultArguments = 1
@@ -54,6 +83,17 @@ plugin.tx_simpleblog_bloglisting {
             linkLabel = Deutscher Link
         }
     }
+    ajax = PAGE
+    ajax {
+        typeNum = 99
+        config {
+            disableAllHeaderCode = 1
+            additionalHeaders = Content-type:application/json
+            admPanel = 0
+            debug = 0
+        }
+        10 < tt_content.list.20.simpleblog_bloglisting
+    }
     // lib.sb_bloglisting = USER
     // lib.sb_bloglisting {
     //     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
@@ -72,23 +112,7 @@ plugin.tx_simpleblog_bloglisting {
     //     persistence < plugin.tx_simpleblog_bloglisting.persistence
     //     settings < plugin.tx_simpleblog_bloglisting.settings
     // }
-# storagePid = 0,32,33,34,35
-    storagePid = 31
-    recursive = 1
-    classes {
-        Simpleblog\Simpleblog\Domain\Model\Blog {
-            newRecordStoragePid = 32
-        }
-        Simpleblog\Simpleblog\Domain\Model\Post {
-            newRecordStoragePid = 33
-        }
-        Simpleblog\Simpleblog\Domain\Model\Comment {
-            newRecordStoragePid = 34
-        }
-        Simpleblog\Simpleblog\Domain\Model\Tag {
-            newRecordStoragePid = 35
-        }
-    }
+
 }
 
 # these classes are only used in auto-generated templates
@@ -126,8 +150,9 @@ plugin.tx_simpleblog._CSS_DEFAULT_STYLE (
 )
 plugin.tx_simpleblog {
     settings {
+        loginpage = 44
         blog {
-            max = 15
+            max = 10
         }
     }
     view.defaultPid=43

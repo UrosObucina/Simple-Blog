@@ -1,5 +1,8 @@
-<f:layot name="default">
+<f:layout name="Default"/>
     <f:section name="content">
-        <f:render partial="Post/Form" arguments="{headline:'Create new post',action:'add',submitmessage:'Create Post!',blog:blog,post:post}" />
+        <f:render partial="Post/Form" arguments="{headline:'Create new post',action:'add',submitmessage:'Create Post!',blog:blog,post:post,tags:tags,authors:authors}" />
+        <div class="form-group">
+            <label>Post author</label>
+            <f:form.select options="{authors}" optionLabelField="fullname" prependOptionLabel="Choose author" prependOptionValue="0" property="author" class="form-control" />
+        </div>
     </f:section>
-</f:layot>

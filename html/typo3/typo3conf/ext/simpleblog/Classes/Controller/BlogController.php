@@ -46,7 +46,7 @@ class BlogController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $limit = ($this->settings['blog']['max']) ?: NULL;
         $this->view->assign('blogs', $this->blogRepository->findSearchForm($search,$limit));
         $this->view->assign('search', $search);
-        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($search);
+        //\TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($this->blogRepository->findAll());
     }
 
     /**

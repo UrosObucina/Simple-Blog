@@ -1,0 +1,10 @@
+<f:layout name="Default"/>
+<f:section name="content">
+    <f:render parital="Post/Form"
+              arguments="{headline:'Edit post',action:'update',submitMessage:'Update Post','blog:blog,post:post,tags:tags,authors:authors}"/>
+    <div class="form-group">
+        <label>Post author</label>
+        <f:form.select options="{authors}" optionLabelField="fullname" prependOptionLabel="Choose author"
+                       prependOptionValue="0" property="author" class="form-control"/>
+    </div>
+</f:section>

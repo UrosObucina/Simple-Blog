@@ -25,6 +25,16 @@ return [
     'types' => [
         '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, fullname, email, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
+    'author' => array(
+        'exclude' => 0,
+        'label' => 'LLL:EXT:simpleblog/Resources/Private/Language/locallang_db.xlf:tx_simpleblog_domain_model_post.author',
+        'config' => array(
+            'type' => 'select',
+            'foreign_table' => 'fe_users',
+            'minitems' => 0,
+            'maxitems' => 1,
+        ),
+    ),
     'columns' => [
         'sys_language_uid' => [
             'exclude' => true,
