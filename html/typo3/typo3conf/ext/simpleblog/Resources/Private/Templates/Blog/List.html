@@ -1,5 +1,5 @@
 <html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-	<h1>Blog</h1>
+	<h1><f:translate id="blog.list.headline"/></h1>
 	{namespace simpleblog=Simpleblog\Simpleblog\ViewHelpers}
 	<simpleblog:dummyText length="400">
 		This is a dummy text!
@@ -11,7 +11,7 @@
 		<div class="form-inline">
 			<div class="form-group">
 				<f:form.textfield name="search" value="{search}" class="form-control" />
-				<f:form.submit value="Search!" class="btn-xs btn-primary" />
+				<f:form.submit value="{f:translate(id:'blog.list.button.search')}" class="btn-xs btn-primary" />
 			</div>
 		</div>
 	</f:form>

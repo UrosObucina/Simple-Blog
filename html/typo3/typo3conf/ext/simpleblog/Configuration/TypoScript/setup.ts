@@ -94,25 +94,22 @@ plugin.tx_simpleblog_bloglisting {
         }
         10 < tt_content.list.20.simpleblog_bloglisting
     }
-    // lib.sb_bloglisting = USER
-    // lib.sb_bloglisting {
-    //     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
-    //     extensionName = Simpleblog
-    //     pluginName = Bloglisting
-    //     vendorName = Simpleblog
-    //     controller = Blog
-    //     action = list
-    //     switchableControllerActions {
-    //         Blog {
-    //             1 = list
-    //             2 = show
-    //         }
-    //     }
-    //     view < plugin.tx_simpleblog_bloglisting.view
-    //     persistence < plugin.tx_simpleblog_bloglisting.persistence
-    //     settings < plugin.tx_simpleblog_bloglisting.settings
-    // }
-
+    config.linkVars = L
+    config.uniqueLinkVars = 1
+    config {
+        sys_language_uid = 0
+        language = default
+        locale_all = en_US
+        htmlTag_langKey = en
+    }
+    [globalVar = GP:L = 1]
+    config {
+        sys_language_uid = 1
+        language = de
+        locale_all = de_DE.utf8
+        htmlTag_langKey = de
+    }
+    [global]
 }
 
 # these classes are only used in auto-generated templates
