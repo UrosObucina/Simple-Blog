@@ -1,6 +1,7 @@
 <f:layout name="Default"/>
 <f:section name="content">
     <h1>Show Post</h1>
+    {namespace simpleblog=Simpleblog\Simpleblog\ViewHelpers}
     <dl class="dl-horizontal">
         <dt>Post title:</dt>
         <dd>{post.title}</dd>
@@ -10,24 +11,48 @@
         </dd>
         <dt>Post content:</dt>
         <dd>
-            <f:format.nl2br>{post.content}</f:format.nl2br>
+        <dd>
+            Orikazuje se
+        </dd>
+        <dd><f:format.nl2br>{post.content}</f:format.nl2br></dd>
+        <dt>Post-Tags</dt>
+        <dd><f:for each="{post.tags}" as="tag">
+            <span class="label label-default">{tag.tagvalue}</span>
+            <dd>{post.author.fullname} (Email: {post.author.email})</dd>
+            <simpleblog:gravatar>{post.author.email}</simpleblog:gravatar>
+        </f:for></dd>
+        </dd>
+
+        <dd>
+            <h3>Comments</h3>
+            <f:security.ifAuthenticated>
+                <f:then>
+                    <f:form action="ajax" name="comment" object="{comment}" arguments="{post:post}">
+                        <f:form.textarea property="comment" id="commentfield"/>
+                        <br/>
+                        <f:form.submit value="Send comment" class="btn btn-primary btn-xs" id="commentsubmit"/>
+                    </f:form>
+                </f:then>
+            </f:security.ifAuthenticated>
+            <ul class="list-group" id="comments">
+                <f:for each="{post.comments}" as="comment" reverse="TRUE">
+                    <li class="list-group-item">
+                        {comment.comment}
+                        <span class="text-muted">(<f:format.date
+                                format="Y-m-d H:i:s">{comment.commentdate}</f:format.date>)</span>
+                    </li>
+                </f:for>
+            </ul>
         </dd>
     </dl>
-    <h3>Comments</h3>
-    <f:form action="ajax" name="comment" object="{comment}" arguments="{post:post}">
-        <f:form.textarea property="comment" id="commentfield"/>
-        <br/>
-        <f:form.submit value="Send comment" class="btn btn-primary btn-xs" id="commentsubmit"/>
-    </f:form>
-    <ul class="list-group" id="comments">
-        <f:for each="{post.comments}" as="comment" reverse="TRUE">
-            <li class="list-group-item">
-                {comment.comment}
-                <span class="text-muted">(<f:format.date
-                        format="Y-m-d H:i:s">{comment.commentdate}</f:format.date>)</span>
-            </li>
-        </f:for>
-    </ul>
+    <simpleblog:isFrontend>
+        <f:then>
+            Frontend!
+        </f:then>
+        <f:else>
+            Backend!
+        </f:else>
+    </simpleblog:isFrontend>
 
     <script type="text/javascript">
         $(document).ready(function () {

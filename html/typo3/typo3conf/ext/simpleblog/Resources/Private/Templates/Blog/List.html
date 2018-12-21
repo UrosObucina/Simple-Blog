@@ -1,5 +1,12 @@
 <html xmlns:f="https://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 	<h1>Blog</h1>
+	{namespace simpleblog=Simpleblog\Simpleblog\ViewHelpers}
+	<simpleblog:dummyText length="400">
+		This is a dummy text!
+	</simpleblog:dummyText>
+	<h3>
+		<simpleblog:tsfe>page|title</simpleblog:tsfe>
+	</h3>
 	<f:form action="list" additionalAttributes="{role:'form'}">
 		<div class="form-inline">
 			<div class="form-group">
@@ -8,6 +15,22 @@
 			</div>
 		</div>
 	</f:form>
+	<ul class="list-group">
+		<simpleblog:widget.sort objects="{blogs}" as="sortedBlogs" property="title">
+			<f:for each="{sortedBlogs}" as="blog">
+				<p>{blog.title}</p>
+			</f:for>
+		</simpleblog:widget.sort>
+	</ul>
+	<ul class="list-group">
+		<simpleblog:widget.AtoZNav objects="{blogs}" as="filteredBlogs" property="title">
+			<simpleblog:widget.sort objects="{filteredBlogs}" as="sortedBlogs" property="title">
+				<f:for each="{sortedBlogs}" as="blog">
+
+				</f:for>
+			</simpleblog:widget.sort>
+		</simpleblog:widget.AtoZNav>
+	</ul>
 	<table>
 		<tr>
 			<th>Title</th>
