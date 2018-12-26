@@ -33,7 +33,7 @@ plugin.tx_simpleblog_bloglisting {
             {
                 newRecordStoragePid = 32
             }
-            Simpleblog\Simpleblog\Domain\Model\Posts
+            Simpleblog\Simpleblog\Domain\Model\Post
             {
                 newRecordStoragePid = 33
             }
@@ -171,3 +171,14 @@ config.tx_extbase {
 //     }
 // }
 module.tx_simpleblog < plugin.tx_simpleblog
+plugin.tx_simpleblog_bloglisting {
+    _LOCAL_LANG {
+        de {
+            blog.list.headline = List aller Blogs
+        }
+    }
+}
+module.tx_simpleblog
+{
+    module.tx_simpleblog_bloglisting < plugin.tx_simpleblog_bloglisting
+}

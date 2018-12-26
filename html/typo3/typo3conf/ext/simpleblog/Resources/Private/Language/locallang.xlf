@@ -69,6 +69,9 @@
 			<trans-unit id="blog.list.button.search">
             <source>Search!</source>
             </trans-unit>
+            <trans-unit id="post.show.headline">
+            <source>Show Post (Blog: "%1$s" / UID: %2$s)</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

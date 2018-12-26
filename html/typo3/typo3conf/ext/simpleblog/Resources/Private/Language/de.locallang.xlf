@@ -71,6 +71,10 @@
                 <source>Search!</source>
                 <target state="translated">Suche!</target>
             </trans-unit>
+            <trans-unit>
+                <source>Show Post (Blog: "%1$s" / UID: %2$s)</source>
+                <target state="translated">Post anzeigen (Blog: "%1$s" / UID: %2$s)</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

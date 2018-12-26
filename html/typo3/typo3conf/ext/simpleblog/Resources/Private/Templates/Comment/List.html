@@ -1,0 +1,28 @@
+<f:layout name="Module/Default" />
+<f:section name="iconButtons">
+    <f:be.buttons.csh table="_MOD_system_SimpleblogSimpleblogadmin" field="delete" />
+</f:section>
+<f:section name="headline">
+    Simpleblog Comment Admin
+</f:section>
+<f:section name="content">
+    <p class="lead">Here you are able to delete Comments:</p>
+    <h2>Comments (not deleted)</h2>
+    <ul>
+        <f:for each="{commentsLive}" as="comment">
+            <li>
+                <f:link.action controller="Comment" action="delete" arguments="{comment:comment}">
+                </f:link.action>
+                &nbsp;&nbsp; {comment.comment}
+            </li>
+        </f:for>
+    </ul>
+    <h2>Comments (deleted)</h2>
+    <ul>
+        <f:for each="{commentsDeleted}" as="comment">
+            <li>
+                &nbsp;&nbsp; {comment.comment}
+            </li>
+        </f:for>
+    </ul>
+</f:section>
